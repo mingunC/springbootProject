@@ -23,11 +23,14 @@ public class UserService {
         user.setUsername(username);
         user.setPassword(password);
         user.setEmail(email);
-
-        //user.setCreateDate(LocalDateTime.now()); // 생성일 설정 (Auditing 사용 시 생략 가능)
-        //user.setUpdateDate(LocalDateTime.now()); // 업데이트 시간 설정 (Auditing 사용 시 생략 가능)
-
         return userRepository.save(user);
+    }
+    // 유저 삭제 메서드
+    public void deleteUser(Long id) {
+        if (!userRepository.existsById(id)) {
+            throw new IllegalArgumentException("User with ID " + id + " does not exist");
+        }
+        userRepository.deleteById(id);
     }
 }
 
