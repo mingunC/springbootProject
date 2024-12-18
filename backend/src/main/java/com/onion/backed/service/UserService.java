@@ -26,11 +26,8 @@ public class UserService {
         return userRepository.save(user);
     }
     // 유저 삭제 메서드
-    public void deleteUser(Long id) {
-        if (!userRepository.existsById(id)) {
-            throw new IllegalArgumentException("User with ID " + id + " does not exist");
-        }
-        userRepository.deleteById(id);
+    public void deleteUser(Long userId) {
+        userRepository.deleteById(userId);
     }
 }
 
