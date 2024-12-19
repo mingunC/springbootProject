@@ -13,7 +13,7 @@ import java.util.Date;
 public class JwtUtil {
 
     // JWT 서명용 비밀 키 (실제 환경에서는 환경 변수나 설정 파일로 관리해야 함)
-    private final String secretKey = "Fb37S4DR0J6UZXpon1MXBUFJik2Rj2BrYzRtHGbxS78=";
+    private final String secretKey = "";
 
     // JWT 만료 시간 (1시간 설정)
     private final long expirationTime = 1000 * 60 * 60; // 1시간
